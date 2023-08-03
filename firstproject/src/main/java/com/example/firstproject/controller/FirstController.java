@@ -14,7 +14,7 @@ public class FirstController {
     @GetMapping("/bye") // 연결
     public String seeYouNext (Model model){
         model.addAttribute("nickname","hiwon");
-        return"goodbye"; // templates/greetings.mustache ->에서 브라우저로 전송
+        return"goodbye"; // templates/goodbye.mustache ->에서 브라우저로 전송
     }
 
 }

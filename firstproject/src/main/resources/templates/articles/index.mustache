@@ -8,13 +8,15 @@
     </tr>
     </thead>
     <tbody>
-    {{#articleList}}   //이 안에서 반복되어 출력됨 for문처럼 데이터묶음 반복출력
+    {{#articleList}}
         <tr>
-            <th >{{id}}</th>
-            <td>{{title}}</td>
-            <td>{{content}}</td>
+        <th >{{id}}</th>
+        <td><a href="/articles/{{id}}">{{title}}</a> </td>
+        <td>{{content}}</td>
         </tr>
     {{/articleList}}
     </tbody>
 </table>
+
+<a href="/articles/new">New Article</a>
 {{>layouts/footer}}

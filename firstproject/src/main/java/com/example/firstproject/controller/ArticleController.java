@@ -39,7 +39,7 @@ public class ArticleController {
        // System.out.println(saved.toString());->로깅으로 대체
         log.info(saved.toString());
 
-        return "";
+        return "redirect:/articles/"+saved.getId();
     }
 
     @GetMapping("/articles/{id}")
@@ -61,7 +61,18 @@ public class ArticleController {
         //2.가져온 article 묶음을 뷰로 전달
         model.addAttribute("articleList",articleEntityList);
 
-        //3.뷰페이지 설정
+        //3.뷰 페이지 설정
         return"articles/index";
+    }
+
+    @GetMapping("/articles/{id}/edit")  //여기서는 {}괄호 한개만!
+    public String edit(@PathVariable Long id,Model model){
+        //수정할 데이터 가져오기
+        Article articleEntity = articleRepository.findById(id).orElse(null);
+
+        //모델에 데이터를 등록
+        model.addAttribute("article",articleEntity);
+        //뷰 페이지 설정
+        return"articles/edit";
     }
 }

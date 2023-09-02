@@ -1,7 +1,7 @@
 {{>layouts/header}}
 
 {{#article}}
-<form class = "container" action="/articles/update" method="post" accept-charset="utf-8"> <!--action은 어디로 보낼지 method는 어떻게 보낼지-->
+<form class = "container" action="/articles/update" method="post"> <!--action은 어디로 보낼지 method는 어떻게 보낼지-->
     <input name = "id" type="hidden" value="{{id}}"/>
     <div class="mb-3">
         <label class="form-label">Title</label>

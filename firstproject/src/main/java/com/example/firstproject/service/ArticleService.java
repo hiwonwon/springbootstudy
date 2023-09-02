@@ -48,6 +48,10 @@ public class ArticleService {
             log.info("잘못된 요청! id :{}, article {}",id,article.toString());
             return null;
         }
+        if(article.getTitle()==null && article.getContent()==null){
+            log.info("제목과 내용이 비었습니다!");
+            return null;
+        }
         //4. 업데이트 및 정상응답
         target.patch(article);
         Article updated = articleRepository.save(target);
